@@ -1,4 +1,5 @@
-import Rendered from "phoenix_live_view/rendered"
+//import Rendered from "phoenix_live_view/rendered"
+import {Rendered} from "liveview_native_core_wasm"
 
 const STATIC = "s"
 const DYNAMICS = "d"
