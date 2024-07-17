@@ -83,6 +83,7 @@ module.exports = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     "^phoenix_live_view$": "<rootDir>/js/phoenix_live_view/index.js",
+    "^liveview_native_core_wasm$": "/Users/sebastian.imlay/projects/liveview-native-core/crates/wasm/pkg/liveview_native_core_wasm.js",
     "^phoenix_live_view/(.*)$": "<rootDir>/js/phoenix_live_view/$1.js"
   },
 
