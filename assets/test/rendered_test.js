@@ -1,4 +1,5 @@
-import Rendered from "phoenix_live_view/rendered"
+//import Rendered from "phoenix_live_view/rendered"
+import {Rendered} from "liveview_native_core_wasm"
 
 const STATIC = "s"
 const DYNAMICS = "d"
@@ -10,7 +11,7 @@ describe("Rendered", () => {
     test("recursively merges two diffs", () => {
       let simple = new Rendered("123", simpleDiff1)
       simple.mergeDiff(simpleDiff2)
-      expect(simple.get()).toEqual({...simpleDiffResult, [COMPONENTS]: {}, newRender: true})
+      expect(simple.get()).toEqual({...simpleDiffResult, [COMPONENTS]: {}, /*newRender: true*/})
 
       let deep = new Rendered("123", deepDiff1)
       deep.mergeDiff(deepDiff2)
@@ -324,7 +325,7 @@ const deepDiff2 = {
 const deepDiffResult = {
   "0": {
     "0": {
-      newRender: true,
+      //newRender: true,
       [DYNAMICS]: [["user1058", "2"]],
       [STATIC]: ["        <tr>\n          <td>", " (", ")</td>\n        </tr>\n"],
       "r": 1
@@ -333,7 +334,7 @@ const deepDiffResult = {
       "  <table>\n    <thead>\n      <tr>\n        <th>Username</th>\n        <th></th>\n      </tr>\n    </thead>\n    <tbody>\n",
       "    </tbody>\n  </table>\n",
     ],
-    newRender: true,
+    //newRender: true,
     "r": 1,
   },
   "1": {
@@ -357,7 +358,11 @@ const deepDiffResult = {
       "      </td>\n    </tr>\n",
     ],
     "r": 1
-  }
+  },
+  [STATIC]: [
+    "",
+    ""
+  ]
 }
 
 const staticReuseDiff = {
